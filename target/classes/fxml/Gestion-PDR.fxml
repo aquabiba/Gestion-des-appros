@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Anchore" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esmat.appro.classController.fichisteController">
+
+               <VBox prefHeight="600.0" prefWidth="218.0">
+      <ImageView fx:id="imagePDR" fitHeight="203.0" fitWidth="218.0" pickOnBounds="true">
+         <Image url="@carburetor.png" />
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" prefHeight="407.0" prefWidth="218.0" style="-fx-color: #A04309;">
+         <Button fx:id="btnAjout" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="50.0" prefWidth="243.0" text="Ajouter PDR">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnModSupp" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="56.0" prefWidth="245.0" text="Modifier/Supprimer ">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnRecherche" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="56.0" prefWidth="245.0" text="Recherche PDR">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnMouvement" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="56.0" prefWidth="218.0" text="Ajouter Mouvement">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnstat" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="56.0" prefWidth="218.0" text="Statistiques">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnConfig" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="56.0" prefWidth="218.0" text="Configuration">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Button>
+
+      </VBox>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </VBox>
+   <ImageView fitHeight="124.0" fitWidth="158.0" layoutX="1065.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@FAR1.png" />
+
+   </ImageView>
+   <Button fx:id="exitBtn" alignment="BASELINE_LEFT" layoutX="1143.0" layoutY="751.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="35.0" prefWidth="28.0">
+      <graphic>
+         <ImageView fx:id="exitImg" fitHeight="32.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@exit-1699614_640.png" />
+            <cursor>
+               <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+         </ImageView>
+      </graphic>
+      <cursor>
+         <Cursor fx:constant="CLOSED_HAND" />
+      </cursor>
+   </Button>
+   <Pane fx:id="panAjout" layoutX="239.0" layoutY="142.0" prefHeight="575.0" prefWidth="919.0" style="-fx-background-color: azure;" visible="false">
+      <TextField fx:id="Nomenclature" layoutX="76.0" layoutY="125.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="codeBarre" layoutX="76.0" layoutY="184.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="QTS" layoutX="326.0" layoutY="184.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="Designation" layoutX="326.0" layoutY="124.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text fontSmoothingType="LCD" layoutX="292.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter/Modifier une piece de Rechange" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Italic" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nomenclature" />
+      <Text layoutX="76.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code-Barre" />
+      <Text layoutX="341.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité en Stock" />
+      <Text layoutX="337.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation" />
+      <Button fx:id="importImg" layoutX="278.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="25.0" prefWidth="108.0" text="Importer l'image" />
+      <Button fx:id="addPDR" layoutX="824.0" layoutY="530.0" mnemonicParsing="false" onAction="#ajouterPDR" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: green;" text="Ajouter" textFill="#fffefe" />
+      <TextField fx:id="photoURL" layoutX="230.0" layoutY="359.0" prefHeight="25.0" prefWidth="224.0" />
+      <ImageView fx:id="photoPDR" fitHeight="145.0" fitWidth="261.0" layoutX="220.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="prixUnitaire" layoutX="76.0" layoutY="245.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="81.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Unitaire" />
+      <Text layoutX="617.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groupe" />
+      <Text layoutX="326.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type de vehicule" />
+      <ComboBox fx:id="typeVehicule" layoutX="326.0" layoutY="247.0" prefHeight="25.0" prefWidth="180.0" />
+      <ComboBox fx:id="groupe" layoutX="617.0" layoutY="121.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="617.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="emplacement dans le magasin" />
+      <ComboBox fx:id="position" layoutX="617.0" layoutY="187.0" prefHeight="25.0" prefWidth="180.0" />
+   </Pane>
+   <Pane fx:id="panMS" layoutX="232.0" layoutY="148.0" prefHeight="612.0" prefWidth="956.0" style="-fx-background-color: azure;" visible="false">
+      <Text layoutX="256.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier/Supprimerune piece de rechange" underline="true" wrappingWidth="380.166015625">
+         <font>
+            <Font name="System Italic" size="21.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nomenclatureMS" layoutX="187.0" layoutY="40.0" prefHeight="25.0" prefWidth="255.0" />
+      <Text layoutX="70.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nomenclature :  ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="supprimerMS" layoutX="393.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: RED;" text="Supprimer" textFill="#f8f8f8" />
+      <Button fx:id="modifierMS" layoutX="476.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: BLUE;" text="Modifier" textFill="#fffefe" />
+      <TableView fx:id="tablePDR1" layoutY="177.0" prefHeight="433.0" prefWidth="987.0">
+         <columns>
+            <TableColumn fx:id="nomCol1" prefWidth="141.0" text="Nomenclature" />
+            <TableColumn fx:id="desiCol1" prefWidth="163.0" text="Designation" />
+            <TableColumn fx:id="typeVCol1" prefWidth="116.0" text="type vehicule" />
+            <TableColumn fx:id="groupeCol1" prefWidth="108.0" text="groupe" />
+            <TableColumn fx:id="qteCol1" prefWidth="89.0" text="Qte_Stock" />
+            <TableColumn fx:id="PUcol1" prefWidth="88.0" text="prix_unitaire" />
+            <TableColumn fx:id="imgcol1" prefWidth="111.0" text="photo" />
+            <TableColumn fx:id="codebarreCol1" prefWidth="79.5999755859375" text="code barre" />
+            <TableColumn fx:id="urlcol1" prefWidth="70.4000244140625" text="Url" />
+            <TableColumn fx:id="isDeleted" prefWidth="74.800048828125" text="supprimée" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="imgLauncher2" fitHeight="293.0" fitWidth="432.0" layoutX="164.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="designationMS" layoutX="187.0" layoutY="80.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="qteMS" layoutX="644.0" layoutY="40.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="PUMs" layoutX="644.0" layoutY="80.0" prefHeight="25.0" prefWidth="255.0" />
+      <Text layoutX="70.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation     :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="527.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité          :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="527.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Unitaire    :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Pane>
+   <Pane fx:id="panModifier" layoutX="245.0" layoutY="163.0" prefHeight="519.0" prefWidth="919.0" style="-fx-background-color: azure;">
+      <TextField fx:id="NomenclatureModif" layoutX="119.0" layoutY="94.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="codeBarreModif" layoutX="119.0" layoutY="153.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="QTSModif" layoutX="351.0" layoutY="153.0" prefHeight="25.0" prefWidth="180.0" />
+      <TextField fx:id="DesignationModif" layoutX="351.0" layoutY="94.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text fontSmoothingType="LCD" layoutX="309.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier une piece de Rechange" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Italic" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="120.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nomenclature" />
+      <Text layoutX="120.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code-Barre" />
+      <Text layoutX="351.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité en Stock" />
+      <Text layoutX="351.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation" />
+      <Button fx:id="enregistrerPDR" layoutX="830.0" layoutY="480.0" mnemonicParsing="false" onAction="#handleBtnAction" style="-fx-background-color: SKYBLUE;" text="Enregistrer" />
+      <TextField fx:id="PUModif" layoutX="119.0" layoutY="212.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="118.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Unitaire" />
+      <Button fx:id="importImgModif" layoutX="477.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleBtnAction" prefHeight="25.0" prefWidth="108.0" text="Importer l'image" />
+      <TextField fx:id="photoURL1" layoutX="477.0" layoutY="307.0" prefHeight="25.0" prefWidth="224.0" />
+      <ComboBox fx:id="groupeModif" layoutX="670.0" layoutY="94.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="670.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="emplacement dans le magasin" />
+      <ComboBox fx:id="positionModif" layoutX="670.0" layoutY="153.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="676.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groupe" />
+      <ImageView fx:id="photoPDR2" fitHeight="165.0" fitWidth="237.0" layoutX="472.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="typeVehiculeModif" layoutX="351.0" layoutY="212.0" prefHeight="25.0" prefWidth="180.0" />
+      <Text layoutX="351.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type de vehicule" />
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Pane>
+   <Pane fx:id="panMouvement" layoutX="239.0" layoutY="148.0" prefHeight="500.0" prefWidth="930.0" style="-fx-background-color: lightgrey;" visible="false">
+      <Text fontSmoothingType="LCD" layoutX="299.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pour saisir un mouvement veuillez remplir le formulair : ">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="195.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N_Folio   :  " />
+      <Text layoutX="195.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de mouvement :" />
+      <Text layoutX="195.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité  :" />
+      <TextField fx:id="numeroFolio" layoutX="340.0" layoutY="143.0" prefHeight="25.0" prefWidth="180.0" promptText="mouvement" />
+      <TextField fx:id="qte_mouvement" layoutX="340.0" layoutY="240.0" prefHeight="25.0" prefWidth="180.0" promptText="mouvement" />
+      <ComboBox fx:id="typeMouvement" layoutX="340.0" layoutY="190.0" prefHeight="25.0" prefWidth="180.0" />
+      <Button fx:id="mouvementAjout" layoutX="783.0" layoutY="402.0" mnemonicParsing="false" onAction="#ajouterM" prefHeight="25.0" prefWidth="95.0" text="Ajouter" />
+      <Text layoutX="195.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nomenclature  :  " />
+      <TextField fx:id="NomenclatureMvt" layoutX="340.0" layoutY="94.0" prefHeight="25.0" prefWidth="180.0" promptText="pièce de rechange" />
+      <DatePicker fx:id="dateMouvement" layoutX="337.0" layoutY="289.0" prefHeight="29.0" prefWidth="180.0" />
+      <Text layoutX="195.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de mouvement" />
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Pane>
+   <Pane fx:id="panRecherche" layoutX="213.0" layoutY="123.0" prefHeight="625.0" prefWidth="987.0" visible="false">
+      <ImageView fx:id="imgLauncher" fitHeight="364.0" fitWidth="517.0" layoutX="204.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <TableView fx:id="tablePDR" layoutX="12.0" layoutY="87.0" prefHeight="519.0" prefWidth="1052.0">
+         <columns>
+            <TableColumn fx:id="nomCol" prefWidth="141.0" text="Nomenclature" />
+            <TableColumn fx:id="desiCol" prefWidth="163.0" text="Designation" />
+            <TableColumn fx:id="typeVCol" prefWidth="116.0" text="type vehicule" />
+            <TableColumn fx:id="groupeCol" prefWidth="108.0" text="groupe" />
+            <TableColumn fx:id="qteCol" prefWidth="89.0" text="Qte_Stock" />
+            <TableColumn fx:id="PUcol" prefWidth="88.0" text="prix_unitaire" />
+            <TableColumn fx:id="imgcol" prefWidth="111.0" text="photo" />
+            <TableColumn fx:id="codebarreCol" prefWidth="74.0" text="code barre" />
+            <TableColumn fx:id="urlcol" prefWidth="81.9998779296875" text="Url" />
+            <TableColumn fx:id="isDeleted1" prefWidth="77.5999755859375" text="isDeleted1" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="233.0" prefHeight="72.0" prefWidth="534.0">
+         <ImageView fitHeight="83.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@searchLocation.png" />
+         </ImageView>
+         <TextField fx:id="searchBar" alignment="CENTER" prefHeight="25.0" prefWidth="204.0" promptText="Entrer la Nomenclarure" />
+         <ImageView fitHeight="67.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@search.png" />
+         </ImageView>
+      </HBox>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Pane>
+   <ImageView fx:id="photoFicheM6" fitHeight="414.0" fitWidth="600.0" layoutX="139.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+   <Pane fx:id="panConfig" layoutX="245.0" layoutY="195.0" prefHeight="340.0" prefWidth="871.0" style="-fx-background-color: lightgrey;" visible="false">
+      <Text layoutX="267.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Changer la couleur de l'arrier plan : " />
+      <CheckBox fx:id="CBlightblue" layoutX="484.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: lightblue;" text="lightblue" />
+      <CheckBox fx:id="CBWhite" layoutX="484.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: white;" text="Blanc" />
+      <CheckBox fx:id="CBBlack" layoutX="484.0" layoutY="130.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="73.0" style="-fx-border-color: black;" text="Noir" />
+   </Pane>
+   <Pane fx:id="panStat" layoutX="327.0" layoutY="180.0" prefHeight="500.0" prefWidth="802.0" visible="false" />
+   <Text fx:id="idSession" layoutX="274.0" layoutY="34.0" stroke="#0b0b0b" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <effect>
+         <DropShadow />
+      </effect></Text>
+   <Pane fx:id="panAcceuil" layoutX="334.0" layoutY="200.0" prefHeight="471.0" prefWidth="788.0" visible="false" />
+   <cursor>
+      <Cursor fx:constant="OPEN_HAND" />
+   </cursor>
+
+        </AnchorPane>
