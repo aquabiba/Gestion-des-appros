@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane  prefHeight="588.0" prefWidth="765.0"  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esmat.appro.classController.loginController">
+
+   <VBox layoutX="426.0" layoutY="128.0" prefHeight="200.0" prefWidth="286.0" spacing="15.0" AnchorPane.leftAnchor="426.0" AnchorPane.topAnchor="128.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UserName :" wrappingWidth="90.658203125">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <TextField id=" " fx:id="username" prefHeight="42.0" prefWidth="286.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password :">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <PasswordField id="passwd" fx:id="passWord" maxHeight="47.0" prefHeight="47.0" prefWidth="265.0" style="-fx-background-color: #FFFFFF;" />
+   </VBox>
+   <ImageView fx:id="loginimg" fitHeight="246.0" fitWidth="329.0" layoutX="98.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@FAR1.png" />
+   </ImageView>
+   <Button fx:id="btnLogin" contentDisplay="CENTER" layoutX="491.0" layoutY="363.0" mnemonicParsing="false" onAction="#Login" prefHeight="33.0" prefWidth="221.0" style="-fx-background-color: #68FF77;" text="login" textFill="#141313">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Button>
+
+        </AnchorPane>
